@@ -1,4 +1,4 @@
-# Listen
+# Listen Demo App
 Simple websocket online user tracking implementation with node.js and socket.io
 
 ### Getting Started
