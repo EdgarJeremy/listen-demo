@@ -33,7 +33,8 @@ app.post("/login", (req, res) => {
     let post = req.body;
     post.id = uuid();
     post.socketid = req.socketid;
-    /** Query database untuk login disini
+    /** 
+     * Query database untuk login disini
      * Silahkan letakkan tiga line dibawah setelah data berhasil di retrieve dari database.
      */
     listener.addUser(post);
