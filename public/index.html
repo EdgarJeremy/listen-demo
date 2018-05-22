@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" />
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.bundle.min.js"></script>
+    <script src="./app.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <title>User Tracking</title>
+    <style>
+        body {
+            position: relative;
+        }
+
+        #login-page,
+        #panel-page,
+        #loading-page {
+            display: none;
+        }
+
+
+        #loading-page { 
+            position: fixed;
+            padding-top: 200px;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background-color: #fff;
+        }
+
+        #logout {
+            float: right;
+        }
+
+        #username {
+            color: #2980b9;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container" id="login-page">
+        <hr />
+        <h3>User Online Tracking</h3>
+        <hr />
+        <div class="well" style="max-width: 300px;">
+            <form method="POST" id="form">
+                <div class="form-group">
+                    <label>Nama</label>
+                    <input autocomplete="off" name="name" type="text" class="form-control" />
+                </div>
+                <div class="form-group">
+                    <button class="btn btn-primary">Masuk</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="container" id="panel-page">
+        <hr />
+        <h3>User Online Tracking</h3>
+        <hr />
+        <p>Login sebagai <span id="username"></span> <button id="logout" class="btn btn-danger">Keluar</button></p>
+        <hr />
+        <p>
+            <b>Daftar user online (<span id="total"></span>)</b>
+        </p>
+        <ul class="list-group" id="online-list">
+        </ul>
+    </div>
+    <div class="container" id="loading-page">
+        <h1 class="text-center">Memuat...</h1>
+    </div>
+</body>
+
+</html>
